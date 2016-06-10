@@ -1,0 +1,29 @@
+.columnContainer{
+    height:300px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.myColumns{
+    border:1px solid #e5e5e5;
+    margin-right: 10px;
+}
+.myContainer{
+    margin-top:10px;
+}
+.buttonRow{
+    margin-top: 10px;
+}
+
+.col{
+    position: relative;
+    display: inline-block;
+    background-color: aqua;
+    border: 1px solid #43d6ff;
+    width:50%;
+    align-self: center;
+    bottom: 0;
+
+}
+.form-group{
+    border-top:1px solid #e5e5e5;
+}

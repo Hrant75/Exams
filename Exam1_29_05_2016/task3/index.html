@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="main.css" type="text/css" rel="stylesheet">
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="col-md-offset-2 col-lg-8">
+            <form>
+
+                <div class="form-group">
+                    <label for="nameInput">Name</label>
+                    <input type="text" class="form-control" id="nameInput" placeholder="Name" oninput="checkName()">
+                </div>
+                <div class="alert alert-danger nameAlert" role="alert">
+                    The name should be 2-20 characters with capital first letter
+                </div>
+
+                <div class="form-group">
+                    <label for="lastInput">Last Name</label>
+                    <input type="text" class="form-control" id="lastInput" placeholder="Last Name" oninput="checkLast()">
+                </div>
+                <div class="alert alert-danger lastAlert" role="alert">
+                    The last name should be 2-40 characters with capital first letter
+                </div>
+
+                <div class="form-group">
+                    <label for="emailInput">Email address</label>
+                    <input type="text" class="form-control" id="emailInput" placeholder="Last Name" oninput="checkEmail()">
+                </div>
+                <div class="alert alert-danger emailAlert" role="alert">
+                    Please input valid e-mail
+                </div>
+
+                <div class="form-group">
+                    <label for="passInput">Password</label>
+                    <input type="password" class="form-control" id="passInput" placeholder="Password" oninput="checkPass()">
+                </div>
+                <div class="alert alert-danger passAlert" role="alert">
+                    Password should be at least 6 characters and digits
+                </div>
+
+                <div class="form-group">
+                    <span><b>BirthDate</b></span>
+
+                    <label for="yearInput">YYYY</label>
+                    <input type="number"  min="1900" max="2016" value="1975" class="" id="yearInput"  oninput="checkYear()">
+
+                    <label for="monthInput">MM</label>
+                    <input type="number" min="1" max="12" value="1" class="" id="monthInput"  oninput="checkMonth()">
+
+                    <label for="dayInput">DD</label>
+                    <input type="number" min="1" max="31" value="31" class="" id="dayInput"  oninput="checkDay()">
+
+                </div>
+
+                <div class="alert alert-danger yearAlert" role="alert">
+                    Year should be between 1900 to 2016
+                </div>
+                <div class="alert alert-danger monthAlert" role="alert">
+                    Month should be between 1 to 12
+                </div>
+                <div class="alert alert-danger dayAlert" role="alert">
+                    Wrong day
+                </div>
+
+                <button class="btn btn-default" onclick="submitClicked()">Submit</button>
+
+            </form>
+        </div>
+    </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

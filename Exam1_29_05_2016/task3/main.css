@@ -1,0 +1,6 @@
+.nameAlert, .lastAlert, .emailAlert, .passAlert, .yearAlert, .monthAlert, .dayAlert{
+    display: none;
+}
+body {
+    padding-top: 50px;
+}
