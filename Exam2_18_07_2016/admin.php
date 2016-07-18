@@ -7,8 +7,8 @@ require_once "engine.php";
 <head>
     <meta charset="UTF-8">
     <title>News - admin panel</title>
-    <!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
-    <link href="bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<!--    <link href="bootstrap.min.css" rel="stylesheet">-->
     <link href="main.css" rel="stylesheet">
 </head>
 <body>
