@@ -1,3 +1,5 @@
+
+
 <nav class="text-center">
     <ul class="pagination">
         <li>
@@ -5,7 +7,7 @@
             if ($currentPage < 2){
                 echo '<a href="#" style="color:black"';
             }else{
-                echo '<a href="admin.php?currentPage='.($currentPage-1).'&pageType='.$pageType.'" ';
+                echo '<a href="'.$fileName.'?currentPage='.($currentPage-1).'&pageType='.$pageType.'" ';
             }
             ?>
             aria-label="Previous">
@@ -20,7 +22,7 @@
                 $style = "font-weight: bold;";
                 $class = "active";
             }
-            echo '<li class=" '.$class.' "><a href="admin.php?currentPage=' . $i .'&pageType='.$pageType.' "style="' . $style . '">' . $i . '</a></li>';
+            echo '<li class=" '.$class.' "><a href="'.$fileName.'?currentPage=' . $i .'&pageType='.$pageType.' "style="' . $style . '">' . $i . '</a></li>';
         }
         ?>
         <li>
@@ -28,7 +30,7 @@
             if ($currentPage == $totalPageCount){
                 echo '<a href="#" style="color:black"';
             }else{
-                echo '<a href="admin.php?currentPage='.($currentPage+1).'&pageType='.$pageType.'" ';
+                echo '<a href="'.$fileName.'?currentPage='.($currentPage+1).'&pageType='.$pageType.'" ';
             }
             ?>aria-label="Next">
             <span aria-hidden="true">&raquo;</span>

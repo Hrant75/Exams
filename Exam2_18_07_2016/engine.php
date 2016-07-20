@@ -12,6 +12,7 @@ if (!$dbConnection) {
     die("Connection failed: " . mysqli_connect_error());
 }
 define("ITEMS_PER_PAGE",4);  //haytararum enq konsant
+$fileName = end( explode('/', $_SERVER['PHP_SELF']) );
 
 if(isset($_GET['currentPage'])){
     $currentPage = $_GET['currentPage'];
@@ -24,7 +25,6 @@ if(isset($_GET['pageType'])){
 } else {
     $pageType = 'news';
 }
-
 
 $currentCategory = NULL;
 if(isset($_GET['currentCategory'])){
@@ -49,11 +49,21 @@ function getData($currentCategory = NULL)
     global $tableName;
 
     $data = [];
-    $sql = "SELECT * FROM ".$tableName;
+    
+    $sql = "
+    SELECT
+        `news`.`id`,
+        `news`.`date`,
+        `news`.`title`,
+        `news`.`content`,
+        `categories`.`category`
+    FROM `news`
+    JOIN `categories` ON `news`.`category_id` = `categories`.`id`";
 
     if(!is_null($currentCategory)){
-        $sql = "SELECT * FROM ".$tableName." WHERE category_id ='".$currentCategory."'";
+        $sql .= " WHERE `category_id` ='".$currentCategory."'";
     }
+    
     $result = mysqli_query($dbConnection, $sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -64,7 +74,6 @@ function getData($currentCategory = NULL)
     } else return false;
 
 }
-
 
 if(isset($_GET['delButton'])) {
     $deleteRow = $_GET['delButton'];
@@ -188,4 +197,5 @@ function getCategoryNameById($id)
         return $data[0]['category'];
     }
 }
+
 ?>

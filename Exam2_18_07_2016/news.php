@@ -32,7 +32,8 @@
                 echo '<td>'.$data[$i]['date'].'</td>';
                 echo '<td>'.$data[$i]['title'].'</td>';
                 echo '<td>'.$data[$i]['content'].'</td>';
-                echo '<td>'.getCategoryNameById($data[$i]['category_id']).'</td>';
+                echo '<td>'.$data[$i]['category'].'</td>';
+//                echo '<td>'.getCategoryNameById($data[$i]['category_id']).'</td>';
 
                 echo ' <td>';
                 echo '<a href="admin.php?currentPage=' . $currentPage .'&pageType='.$pageType.'&delButton='. $data[$i]['id']. '" class="btn btn-default">Delete</a>';

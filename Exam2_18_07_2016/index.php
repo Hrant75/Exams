@@ -12,7 +12,6 @@ require_once "engine.php";
     <link href="main.css" rel="stylesheet">
 </head>
 <body>
-<h3 class="text-center">News</h3>
 <?php
 $categories = getCategories();
 $data = getData($currentCategory);
@@ -29,10 +28,15 @@ if($start+$limit > count($data)){
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            <h2 class="text-center">News</h2>
             <br>
-                <ul class="nav nav-pills">
-                
-                <?php
+            <ul class="nav nav-pills">
+            <?php
+                echo '<li role="presentation" style="font-weight:bold"';
+                        if(is_null($currentCategory)){
+                            echo ' class="active"';
+                        }
+                    echo '><a href="index.php">All</a></li>';
                 foreach ($categories as $category ){
                     echo '<li role="presentation" ';
                         if($currentCategory == $category['id']){
@@ -41,17 +45,13 @@ if($start+$limit > count($data)){
                     echo '><a href="index.php?currentCategory='.$category['id'].'">'.$category['category'].'</a></li>';
                 }
                 ?>
-                </ul>
-
-
-        <div class="col-md-9">
-
+            </ul>
 
             <table class="table table-striped">
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Date Created</th>
+                    <th>Date</th>
                     <th>Title</th>
                     <th>Content</th>
                     <th>Category</th>
@@ -65,7 +65,8 @@ if($start+$limit > count($data)){
                     echo '<td>'.$data[$i]['date'].'</td>';
                     echo '<td>'.$data[$i]['title'].'</td>';
                     echo '<td>'.$data[$i]['content'].'</td>';
-                    echo '<td>'.getCategoryNameById($data[$i]['category_id']).'</td>';
+                    echo '<td>'.$data[$i]['category'].'</td>';
+//                    echo '<td>'.getCategoryNameById($data[$i]['category_id']).'</td>';
                 }
                 ?>
 
@@ -76,7 +77,9 @@ if($start+$limit > count($data)){
 </div>
 
 
-
+<?php
+include 'pagination.php';
+?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
